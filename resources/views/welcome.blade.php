@@ -1,4 +1,5 @@
   @extends('app')
+  @section('title', 'Saas App')
   @section('content')
     <!--Nav-->
     <nav id="header" class="fixed w-full z-30 top-0 text-white">
