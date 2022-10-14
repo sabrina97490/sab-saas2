@@ -1,4 +1,4 @@
-  @extends('app')
+@extends('app')
   @section('title', 'Saas App')
   @section('content')
     <!--Nav-->
@@ -26,23 +26,23 @@
           </button>
         </div>
         <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
-          <ul class="list-reset lg:flex justify-end flex-1 items-center">
+          <ul class="list-reset lg:flex justify-end flex-1 items-center" id="navMenu">
             <li class="mr-3">
               <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Accueil</a>
             </li>
             <li class="mr-3">
-              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Fonctionnalités</a>
+              <a class="inline-block text-black no-underline hover:text-gray-700 hover:text-underline py-2 px-4" href="#">Fonctionnalités</a>
             </li>
             <li class="mr-3">
-              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Prix</a>
+              <a class="inline-block text-black no-underline hover:text-gray-700 hover:text-underline py-2 px-4" href="#">Prix</a>
             </li>
           </ul>
-          <button
-            id="navAction"
-            class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-          >
-            Se Connecter
-          </button>
+          <ul>
+            <li class="p-4">
+              <a id="navAction" href="{{route ('login') }}" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">Connexion</a>
+            </li>
+          </ul>
+
         </div>
       </div>
       <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
@@ -278,6 +278,7 @@
                 <span class="text-base">/ par mois</span>
               </div>
               <div class="flex items-center justify-center">
+              <li class="border-b py-4"><a href="{{ route('login') }}">Se connecter</a></li>
                 <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                 S'enregistrer
                 </button>

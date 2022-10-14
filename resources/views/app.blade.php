@@ -22,7 +22,7 @@
 
     <style>
       .gradient {
-         background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+         background: linear-gradient(90deg, #4F46E5 0%, #DB2777 100%);
       }
     </style>
 
