@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/profile', function () {
+    // Only verified users may access this route...
+})->middleware('verified');
 
 require __DIR__.'/auth.php';
